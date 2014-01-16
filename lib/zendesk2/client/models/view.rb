@@ -9,7 +9,7 @@ class Zendesk2::Client::View < Zendesk2::Model
   attribute :restrictions, :type => :hash
   
   def tickets
-    body = self.connection.get_view_tickets('view_id' => self.id).body['tickets']
+    body = self.connection.get_view_tickets('view_id' => self.id).body
     Zendesk2::Client::Tickets.new(body)
   end
   
