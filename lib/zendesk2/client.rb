@@ -18,6 +18,8 @@ class Zendesk2::Client < Cistern::Service
   collection :topics
   collection :users
   collection :user_identities
+  collection :view_tickets
+  collection :views
   model :category
   model :forum
   model :group
@@ -35,6 +37,7 @@ class Zendesk2::Client < Cistern::Service
   model :topic_comment
   model :user
   model :user_identity
+  model :view
 
   request :get_assignable_groups
   request :create_category
@@ -85,6 +88,10 @@ class Zendesk2::Client < Cistern::Service
   request :get_user_identities
   request :get_user_identity
   request :get_users
+  request :get_view
+  request :get_view_counts
+  request :get_view_tickets
+  request :get_views
   request :search
   request :search_user
   request :mark_user_identity_primary
